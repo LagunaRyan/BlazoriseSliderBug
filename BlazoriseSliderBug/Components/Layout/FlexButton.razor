@@ -1,0 +1,15 @@
+﻿<Button Color="Color"
+        Type="ButtonType.Link"
+        To="@Href"
+        Display="Display.Flex"
+        Flex="Flex.AlignItems.Center.JustifyContent.Center.Grow"
+        Border="Border.RoundedZero"
+        Style="height: 100%; width: 100%;">
+    @Text
+</Button>
+
+@code {
+    [Parameter] public Color Color { get; set; } = Color.Default;
+    [Parameter] public string Href { get; set; } = string.Empty;
+    [Parameter] public string Text { get; set; } = string.Empty;
+}

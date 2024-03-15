@@ -1,0 +1,26 @@
+﻿@page "/tabs"
+
+<PageTitle>Tabs</PageTitle>
+
+<h1>Tabs</h1>
+
+<p>This is the <a href="https://blazorise.com/docs/components/tab" target="_blank">tab component</a> using the same slider from the <a href="/slider">slider page</a>.</p>
+<p>When the slider is separated out into its own component, it seems to be working fine.</p>
+
+<hr />
+
+<Tabs SelectedTab="home">
+    <Items>
+        <Tab Name="home">Home</Tab>
+        <Tab Name="profile">Profile</Tab>
+    </Items>
+    <Content>
+        <TabPanel Name="home">
+            <Strong>Home Tab</Strong>
+        </TabPanel>
+        <TabPanel Name="profile">
+            <Strong>Profile Tab</Strong>
+            <SliderComponent />
+        </TabPanel>
+    </Content>
+</Tabs>

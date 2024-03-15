@@ -1,0 +1,35 @@
+﻿@page "/tabsandslider"
+
+<PageTitle>Tabs and Slider</PageTitle>
+
+<h1>Tabs and Slider</h1>
+
+<p>Here, the slider and tab components are in the same razor page. Opening the profile tab, then attempting to use the slider, appears to cause the component to refresh.</p>
+<p>Attempting to use the slider after this will cause the issue to happen on mouseover.</p>
+
+<hr />
+
+<Tabs SelectedTab="home">
+    <Items>
+        <Tab Name="home">Home</Tab>
+        <Tab Name="profile">Profile</Tab>
+    </Items>
+    <Content>
+        <TabPanel Name="home">
+            <Strong>Home Tab</Strong>
+        </TabPanel>
+        <TabPanel Name="profile">
+            <Strong>Profile Tab</Strong>
+            <Paragraph>
+                Current value: @value
+            </Paragraph>
+            <Field>
+                <Slider @bind-Value="@value" Step="5" Max="500" />
+            </Field>
+        </TabPanel>
+    </Content>
+</Tabs>
+
+@code {
+    int value = 100;
+}
