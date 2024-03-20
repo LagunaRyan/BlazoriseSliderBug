@@ -1,0 +1,62 @@
+﻿@page "/tabsandselect"
+
+<PageTitle>Tabs and Slider</PageTitle>
+
+<h1>Tabs and Select</h1>
+
+<p>Adding a select component inside of a tab component will cause the whole tab to shift up. You are unable to scroll up to access the tabs again.</p>
+
+<Divider />
+
+<Field>
+    <FieldLabel>Select outside of tabs</FieldLabel>
+    <Select @bind-SelectedValue="@selectedValue">
+        <SelectItem Value="1">One</SelectItem>
+        <SelectItem Value="2">Two</SelectItem>
+        <SelectItem Value="3">Three</SelectItem>
+        <SelectItem Value="4">Four</SelectItem>
+    </Select>
+</Field>
+
+<Divider />
+
+<Tabs SelectedTab="home">
+    <Items>
+        <Tab Name="home">Home</Tab>
+        <Tab Name="profile">Profile</Tab>
+    </Items>
+    <Content>
+        <TabPanel Name="home">
+            <Strong>Home Tab</Strong>
+            <Field>
+                <FieldLabel>Select inside of tabs</FieldLabel>
+                <Select @bind-SelectedValue="@selectedValue">
+                    <SelectItem Value="1">One</SelectItem>
+                    <SelectItem Value="2">Two</SelectItem>
+                    <SelectItem Value="3">Three</SelectItem>
+                    <SelectItem Value="4">Four</SelectItem>
+                </Select>
+            </Field>
+        </TabPanel>
+        <TabPanel Name="profile">
+            <Strong>Profile Tab</Strong>
+            <Div>Profile tab content content.</Div>
+        </TabPanel>
+    </Content>
+</Tabs>
+
+<Divider />
+
+<Field>
+    <FieldLabel>Select outside of tabs</FieldLabel>
+    <Select @bind-SelectedValue="@selectedValue">
+        <SelectItem Value="1">One</SelectItem>
+        <SelectItem Value="2">Two</SelectItem>
+        <SelectItem Value="3">Three</SelectItem>
+        <SelectItem Value="4">Four</SelectItem>
+    </Select>
+</Field>
+
+@code {
+    int selectedValue;
+}
